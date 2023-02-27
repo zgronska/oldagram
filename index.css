@@ -64,6 +64,10 @@ body {
     max-height: 22px;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 /* Layout */
 
 .container {
