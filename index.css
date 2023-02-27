@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
+:root {
+    --accent: #C6C6C6;
+    --bg: #fff;
+    --fg: #000;
+}
+
 html,
 body {
     margin: 0;
