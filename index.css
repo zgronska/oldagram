@@ -10,10 +10,43 @@ html,
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
 }
 
 /* Basic styles */
 
 body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
 }
