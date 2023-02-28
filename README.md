@@ -2,6 +2,8 @@
 
 Oldagram is a JavaScript-based Instagram clone that features selfies of famous painters such as Monet, Kahlo, and Van Gogh.
 
+![Oldagram screenshot](oldagram.png)
+
 ## Features
 
 - View posts from famous painters
