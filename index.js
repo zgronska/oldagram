@@ -80,10 +80,10 @@ const postContainer = document.querySelector(".main-content");
 // Post rendering function
 function renderPosts() {
   posts.forEach((item) => {
-    const { name, username, location, avatar, post, comment, likes } = item;
+    const { id, name, username, location, avatar, post, comment, likes } = item;
 
     postContainer.innerHTML += `
-        <div class="post-card">
+        <div class="post-card" id="p-${id}">
             <div class="post-header">
                 <img src="${avatar}" alt="Author avatar" class="post-header-pfp pfp" />
                 <div class="post-header-content">
@@ -122,13 +122,37 @@ function renderPosts() {
   });
 }
 
-window.onload = renderPosts();
+function likePost(postId) {
+  // Find current post and select relevant elements
+  const post = posts.find((post) => post.id === postId);
+  const likeBtn = document.querySelector(`#p-${postId} .like-btn`);
+  const likeCounterEl = document.querySelector(`#p-${postId} .post-likes`);
 
-// Like post function
-const likeBtn = document.querySelectorAll(".like-btn");
+  // Decide whether to like or unlike
+  if (likeBtn.classList.contains("liked")) {
+    post.likes--; // Modify value in array
+    likeBtn.classList.remove("liked"); // Modify like icon CSS
+  } else {
+    post.likes++;
+    likeBtn.classList.add("liked");
+  }
 
-likeBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("liked");
+  // Update the like counter
+  likeCounterEl.innerText = `${post.likes} likes`;
+}
+
+// Trigger the like function on click
+function handleLike() {
+  posts.forEach((post) => {
+    const likeBtn = document.querySelector(`#p-${post.id} .like-btn`);
+    likeBtn.addEventListener("click", () => {
+      likePost(post.id);
+    });
   });
-});
+}
+
+// Fire functions when the window loads
+window.onload = () => {
+  renderPosts();
+  handleLike();
+};
