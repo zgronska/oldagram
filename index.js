@@ -140,9 +140,6 @@ function likePost(postId) {
   // Update the like counter
   likeCounterEl.innerText = `${post.likes} likes`;
 }
-  // Update the like counter
-  likeCounterEl.innerText = `${post.likes} likes`;
-}
 
 // Trigger the like function on click
 function handleLike() {
