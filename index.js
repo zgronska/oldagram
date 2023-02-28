@@ -1,5 +1,6 @@
 const posts = [
   {
+    id: 0,
     name: "Vincent van Gogh",
     username: "vincey1853",
     location: "Zundert, Netherlands",
@@ -9,6 +10,7 @@ const posts = [
     likes: 21,
   },
   {
+    id: 1,
     name: "Gustave Courbet",
     username: "gus1819",
     location: "Ornans, France",
@@ -18,6 +20,7 @@ const posts = [
     likes: 4,
   },
   {
+    id: 2,
     name: "Joseph Ducreux",
     username: "jd1735",
     location: "Paris, France",
@@ -28,6 +31,7 @@ const posts = [
     likes: 152,
   },
   {
+    id: 3,
     name: "Frida Kahlo",
     username: "frida_kahlowkey",
     location: "Mexico City, Mexico",
@@ -38,6 +42,7 @@ const posts = [
     likes: 432,
   },
   {
+    id: 4,
     name: "Edward Munch",
     username: "munchies420",
     location: "Oslo, Norway",
@@ -47,6 +52,7 @@ const posts = [
     likes: 0,
   },
   {
+    id: 5,
     name: "Judith Leyster",
     username: "judith_paints_it_black",
     location: "Haarlem, the Netherlands",
@@ -56,6 +62,7 @@ const posts = [
     likes: 245,
   },
   {
+    id: 6,
     name: "Claude Monet",
     username: "monetoverit",
     location: "Giverny, France",
