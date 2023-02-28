@@ -164,6 +164,6 @@ body {
 }
 
 .like-btn.liked .heart > path {
-    stroke: none;
+    stroke: red;
     fill: red;
 }

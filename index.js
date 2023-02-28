@@ -1,5 +1,6 @@
 const posts = [
   {
+    id: 0,
     name: "Vincent van Gogh",
     username: "vincey1853",
     location: "Zundert, Netherlands",
@@ -9,6 +10,7 @@ const posts = [
     likes: 21,
   },
   {
+    id: 1,
     name: "Gustave Courbet",
     username: "gus1819",
     location: "Ornans, France",
@@ -18,6 +20,7 @@ const posts = [
     likes: 4,
   },
   {
+    id: 2,
     name: "Joseph Ducreux",
     username: "jd1735",
     location: "Paris, France",
@@ -28,6 +31,7 @@ const posts = [
     likes: 152,
   },
   {
+    id: 3,
     name: "Frida Kahlo",
     username: "frida_kahlowkey",
     location: "Mexico City, Mexico",
@@ -38,6 +42,7 @@ const posts = [
     likes: 432,
   },
   {
+    id: 4,
     name: "Edward Munch",
     username: "munchies420",
     location: "Oslo, Norway",
@@ -47,6 +52,7 @@ const posts = [
     likes: 0,
   },
   {
+    id: 5,
     name: "Judith Leyster",
     username: "judith_paints_it_black",
     location: "Haarlem, the Netherlands",
@@ -56,6 +62,7 @@ const posts = [
     likes: 245,
   },
   {
+    id: 6,
     name: "Claude Monet",
     username: "monetoverit",
     location: "Giverny, France",
@@ -73,10 +80,10 @@ const postContainer = document.querySelector(".main-content");
 // Post rendering function
 function renderPosts() {
   posts.forEach((item) => {
-    const { name, username, location, avatar, post, comment, likes } = item;
+    const { id, name, username, location, avatar, post, comment, likes } = item;
 
     postContainer.innerHTML += `
-        <div class="post-card">
+        <div class="post-card" id="p-${id}">
             <div class="post-header">
                 <img src="${avatar}" alt="Author avatar" class="post-header-pfp pfp" />
                 <div class="post-header-content">
@@ -115,13 +122,41 @@ function renderPosts() {
   });
 }
 
-window.onload = renderPosts();
+function likePost(postId) {
+  // Find current post and select relevant elements
+  const post = posts.find((post) => post.id === postId);
+  const likeBtn = document.querySelector(`#p-${postId} .like-btn`);
+  const likeCounterEl = document.querySelector(`#p-${postId} .post-likes`);
 
-// Like post function
-const likeBtn = document.querySelectorAll(".like-btn");
+  // Decide whether to like or unlike
+  if (likeBtn.classList.contains("liked")) {
+    post.likes--; // Modify value in array
+    likeBtn.classList.remove("liked"); // Modify like icon CSS
+  } else {
+    post.likes++;
+    likeBtn.classList.add("liked");
+  }
 
-likeBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("liked");
+  // Update the like counter
+  likeCounterEl.innerText = `${post.likes} likes`;
+}
+
+// Trigger the like function on click
+function handleLike() {
+  posts.forEach((post) => {
+    const likeBtn = document.querySelector(`#p-${post.id} .like-btn`);
+    const postImg = document.querySelector(`#p-${post.id} .post-pic`);
+    likeBtn.addEventListener("click", () => {
+      likePost(post.id);
+    });
+    postImg.addEventListener("dblclick", () => {
+      likePost(post.id);
+    });
   });
-});
+}
+
+// Fire functions when the window loads
+window.onload = () => {
+  renderPosts();
+  handleLike();
+};
