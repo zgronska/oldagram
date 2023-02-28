@@ -77,6 +77,8 @@ function renderPosts() {
   });
 }
 
+window.onload = renderPosts();
+
 // Like post function
 const likeBtn = document.querySelectorAll(".like-btn");
 
