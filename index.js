@@ -27,6 +27,44 @@ const posts = [
       "gm friends! which coin are YOU stacking up today?? post below and WAGMI!",
     likes: 152,
   },
+  {
+    name: "Frida Kahlo",
+    username: "frida_kahlowkey",
+    location: "Mexico City, Mexico",
+    avatar: "images/avatar-kahlo.jpg",
+    post: "images/post-kahlo.jpg",
+    comment:
+      "Caught me looking like a snack 🌮👀 #selfiegamestrong #artistlife #feminist",
+    likes: 432,
+  },
+  {
+    name: "Edward Munch",
+    username: "munchies420",
+    location: "Oslo, Norway",
+    avatar: "images/avatar-munch.jpg",
+    post: "images/post-munch.jpeg",
+    comment: "Feeling a little existential today... 😔🖤 #arttherapy #emoart",
+    likes: 0,
+  },
+  {
+    name: "Judith Leyster",
+    username: "judith_paints_it_black",
+    location: "Haarlem, the Netherlands",
+    avatar: "images/post-leyster.jpg",
+    post: "images/post-leyster.jpg",
+    comment: "Painting is my happy place 🎨😊 #artistsoninstagram #girlboss",
+    likes: 245,
+  },
+  {
+    name: "Claude Monet",
+    username: "monetoverit",
+    location: "Giverny, France",
+    avatar: "images/avatar-monet.jpg",
+    post: "images/post-monet.jpg",
+    comment:
+      "Just floating through life on a lily pad 🌿💦 #impressionistvibes ",
+    likes: 58,
+  },
 ];
 
 // Select elements
