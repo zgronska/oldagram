@@ -121,6 +121,46 @@ body {
     column-gap: 0.5em;
 }
 
+.icon {
+    cursor: pointer;
+}
+
+.icon:hover,
+.icon:focus {
+    opacity: 0.6;
+}
+
 .post-likes {
     padding-block: 0.9em;
+}
+
+.heart > path {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+    transition: fill .2s ease;
+}
+
+@keyframes liked {
+    0% {
+        transform: scale(.8);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.like-btn:active .heart,
+.like-btn:focus .heart {
+    animation: liked .2s ease;
+}
+
+.like-btn.liked .heart > path {
+    stroke: none;
+    fill: red;
 }
