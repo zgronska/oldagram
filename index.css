@@ -115,6 +115,11 @@ body {
     display: block;
 }
 
+.post-pic {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 .post-bottom {
     padding: 1.2em 0.8em;
 }
