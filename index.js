@@ -32,17 +32,21 @@ const posts = [
 // Select elements
 const postContainer = document.querySelector(".main-content");
 
-posts.forEach((post) => {
-  postContainer.innerHTML += `
+// Post rendering function
+function renderPosts() {
+  posts.forEach((item) => {
+    const { name, username, location, avatar, post, comment, likes } = item;
+
+    postContainer.innerHTML += `
         <div class="post-card">
             <div class="post-header">
-                <img src="${post.avatar}" alt="Author avatar" class="post-header-pfp pfp" />
+                <img src="${avatar}" alt="Author avatar" class="post-header-pfp pfp" />
                 <div class="post-header-content">
-                <span class="bold post-header-author">${post.name}</span>
-                <span class="post-header-location">${post.location}</span>
+                <span class="bold post-header-author">${name}</span>
+                <span class="post-header-location">${location}</span>
                 </div>
             </div>
-            <img src="${post.post}" alt="Selfie of ${post.name}" class="post-pic" />
+            <img src="${post}" alt="Selfie of ${name}" class="post-pic" />
             <div class="post-bottom">
                 <div class="icon-bar">
                 <div class="like-btn" role="button" alt="Like icon">
@@ -63,14 +67,15 @@ posts.forEach((post) => {
                     class="icon"
                     role="button" />
                 </div>
-                <p class="post-likes bold">${post.likes} likes</p>
+                <p class="post-likes bold">${likes} likes</p>
                 <p class="post-caption">
-                <span class="bold author">${post.username}</span> ${post.comment}
+                <span class="bold author">${username}</span> ${comment}
                 </p>
             </div>
         </div>
     `;
-});
+  });
+}
 
 // Like post function
 const likeBtn = document.querySelectorAll(".like-btn");
